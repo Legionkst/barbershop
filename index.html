@@ -18,18 +18,10 @@ overflow:hidden;
 z-index:-1;
 }
 .video-bg video{
-min-width:100%;
-min-height:100%;
+width:100%;
+height:100%;
 object-fit:cover;
 filter:brightness(40%);
-}
-
-/* Мобильные устройства — скрываем видео, ставим фон */
-@media (max-width: 768px) {
-  .video-bg video { display: none; }
-  .video-bg {
-    background: url('fallback.jpg') center/cover no-repeat;
-  }
 }
 
 /* Контент */
@@ -52,11 +44,11 @@ transition: transform 0.2s;
 }
 .btn:hover{transform: scale(1.05);}
 
-/* Контакты под кнопками */
+/* Контакты с анимацией */
 .contacts{
 margin-top:30px;
 font-size:18px;
-opacity:0; /* изначально скрыты для анимации */
+opacity:0;
 transform: translateY(30px);
 transition: all 1s ease;
 }
@@ -108,9 +100,9 @@ footer p{font-size:16px}
 
 <!-- Видео фон -->
 <div class="video-bg">
-<video autoplay muted loop poster="fallback.jpg">
-<source src="barber.mp4" type="video/mp4">
-</video>
+  <video autoplay muted loop playsinline>
+    <source src="barber.mp4" type="video/mp4">
+  </video>
 </div>
 
 <header>
@@ -126,14 +118,27 @@ footer p{font-size:16px}
 Записаться онлайн
 </a>
 
-<!-- Контакты под кнопками -->
+<!-- Контакты с иконками -->
 <div class="contacts" id="contacts">
-<p>Адрес: Улица Баймагамбетова, 30Б</p>
-<p>Телефон: +7 705 288 28 94</p>
-<a href="https://www.instagram.com/legion_kst/">Instagram</a>
-<a href="https://2gis.kz/kostanaj/search/legion/firm/70000001094244475/63.609097%2C53.197228?m=63.631865%2C53.215003%2F10.62">Открыть в 2GIS</a>
+  <p>📍 Адрес: Улица Баймагамбетова, 30Б</p>
+  <p>📞 Телефон: +7 705 288 28 94</p>
+  <p>
+    <a href="https://www.instagram.com/legion_kst/">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#c9a24d" style="vertical-align:middle;margin-right:5px;">
+        <path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.96.24 2.41.402a4.92 4.92 0 011.75 1.05 4.92 4.92 0 011.05 1.75c.162.45.348 1.24.402 2.41.058 1.267.07 1.65.07 4.85s-.012 3.583-.07 4.85c-.054 1.17-.24 1.96-.402 2.41a4.92 4.92 0 01-1.05 1.75 4.92 4.92 0 01-1.75 1.05c-.45.162-1.24.348-2.41.402-1.267.058-1.65.07-4.85.07s-3.583-.012-4.85-.07c-1.17-.054-1.96-.24-2.41-.402a4.92 4.92 0 01-1.75-1.05 4.92 4.92 0 01-1.05-1.75c-.162-.45-.348-1.24-.402-2.41C2.212 15.583 2.2 15.2 2.2 12s.012-3.583.07-4.85c.054-1.17.24-1.96.402-2.41a4.92 4.92 0 011.05-1.75 4.92 4.92 0 011.75-1.05c.45-.162 1.24-.348 2.41-.402C8.417 2.212 8.8 2.2 12 2.2zm0-2.2C8.735 0 8.332.012 7.052.07 5.77.128 4.802.29 4.042.53a7.09 7.09 0 00-2.565 1.41A7.09 7.09 0 00.067 4.505c-.24.76-.402 1.728-.46 3.01C-.012 8.668 0 9.071 0 12c0 2.928-.012 3.332.07 4.615.058 1.282.22 2.25.46 3.01a7.09 7.09 0 001.41 2.565 7.09 7.09 0 002.565 1.41c.76.24 1.728.402 3.01.46C8.668 23.988 9.071 24 12 24s3.332-.012 4.615-.07c1.282-.058 2.25-.22 3.01-.46a7.09 7.09 0 002.565-1.41 7.09 7.09 0 001.41-2.565c.24-.76.402-1.728.46-3.01.082-1.283.07-1.686.07-4.615s.012-3.332-.07-4.615c-.058-1.282-.22-2.25-.46-3.01a7.09 7.09 0 00-1.41-2.565 7.09 7.09 0 00-2.565-1.41c-.76-.24-1.728-.402-3.01-.46C15.332.012 14.928 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/>
+      </svg>
+      Instagram
+    </a>
+  </p>
+  <p>
+    <a href="https://2gis.kz/kostanaj/search/legion/firm/70000001094244475/63.609097%2C53.197228?m=63.631865%2C53.215003%2F10.62">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#c9a24d" style="vertical-align:middle;margin-right:5px;">
+        <path d="M12 0C5.373 0 0 5.372 0 12c0 6.627 5.373 12 12 12s12-5.373 12-12C24 5.372 18.627 0 12 0zm.003 17.5c-3.036 0-5.5-2.464-5.5-5.5s2.464-5.5 5.5-5.5 5.5 2.464 5.5 5.5-2.464 5.5-5.5 5.5z"/>
+      </svg>
+      2GIS
+    </a>
+  </p>
 </div>
-</header>
 
 <div class="section">
 <h2>Наши работы</h2>
@@ -159,11 +164,11 @@ i = (i+1) % images.length;
 document.getElementById("slide").src = images[i];
 },2500);
 
-// Анимация появления контактов
+// Плавное появление контактов
 const contacts = document.getElementById('contacts');
 function checkVisibility() {
   const rect = contacts.getBoundingClientRect();
-  if(rect.top < window.innerHeight - 50){ // когда блок почти виден
+  if(rect.top < window.innerHeight - 50){
     contacts.classList.add('visible');
     window.removeEventListener('scroll', checkVisibility);
   }
@@ -171,8 +176,6 @@ function checkVisibility() {
 window.addEventListener('scroll', checkVisibility);
 window.addEventListener('load', checkVisibility);
 </script>
-
-</div>
 
 <footer>
 <p>Барбершоп «Legion» — четко. стильно. по-мужски.</p>
