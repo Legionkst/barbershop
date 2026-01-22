@@ -7,7 +7,7 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,Helvetica,sans-serif;color:#fff;background:#000;text-align:center}
+body{font-family:Arial,Helvetica,sans-serif;color:#fff;text-align:center;background:#000}
 
 /* Видео фон */
 .video-bg{
@@ -22,6 +22,14 @@ min-width:100%;
 min-height:100%;
 object-fit:cover;
 filter:brightness(40%);
+}
+
+/* Мобильные устройства — скрываем видео, ставим фон */
+@media (max-width: 768px) {
+  .video-bg video { display: none; }
+  .video-bg {
+    background: url('fallback.jpg') center/cover no-repeat;
+  }
 }
 
 /* Контент */
@@ -68,7 +76,7 @@ footer a{color:#c9a24d;text-decoration:none;display:block;margin:10px 0}
 
 <!-- Видео фон -->
 <div class="video-bg">
-<video autoplay muted loop>
+<video autoplay muted loop poster="fallback.jpg">
 <source src="barber.mp4" type="video/mp4">
 </video>
 </div>
@@ -118,11 +126,4 @@ document.getElementById("slide").src = images[i];
 <h3>Контакты</h3>
 
 <a href="https://www.instagram.com/legion_kst/">Instagram</a>
-<a href="https://2gis.kz/kostanaj/search/legion/firm/70000001094244475/63.609097%2C53.197228?m=63.631865%2C53.215003%2F10.62">Открыть в 2GIS</a>
-
-<p>Адрес: Улица Баймагамбетова, 30Б</p>
-<p>Телефон: +7 705 288 28 94</p>
-</footer>
-
-</body>
-</html>
+<a href="https://2gis.kz/kostanaj/search/
