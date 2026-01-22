@@ -35,8 +35,9 @@ filter:brightness(40%);
 /* Контент */
 header{padding:120px 20px}
 h1{font-size:48px;margin-bottom:15px}
-.section{padding:70px 20px;max-width:1000px;margin:auto}
+p{font-size:18px}
 
+/* Кнопки */
 .btn{
 display:inline-block;
 margin:15px;
@@ -46,7 +47,28 @@ color:#000;
 text-decoration:none;
 font-weight:bold;
 border-radius:8px;
-font-size:18px
+font-size:18px;
+transition: transform 0.2s;
+}
+.btn:hover{transform: scale(1.05);}
+
+/* Контакты под кнопками */
+.contacts{
+margin-top:30px;
+font-size:18px;
+opacity:0; /* изначально скрыты для анимации */
+transform: translateY(30px);
+transition: all 1s ease;
+}
+.contacts.visible{
+opacity:1;
+transform: translateY(0);
+}
+.contacts a{
+color:#c9a24d;
+text-decoration:none;
+display:block;
+margin:8px 0;
 }
 
 /* Карусель */
@@ -60,15 +82,25 @@ position:relative;
 .carousel img{
 width:100%;
 border-radius:12px;
+transition: transform 0.3s;
 }
 
 /* Футер */
 footer{
-padding:60px 20px;
+padding:40px 20px;
 background:#111;
 margin-top:60px;
 }
-footer a{color:#c9a24d;text-decoration:none;display:block;margin:10px 0}
+footer p{font-size:16px}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px){
+  header{padding:80px 15px}
+  h1{font-size:32px}
+  p, .contacts{font-size:16px}
+  .btn{padding:14px 28px;font-size:16px}
+  .carousel{margin:30px auto; max-width:100%}
+}
 </style>
 </head>
 
@@ -93,6 +125,14 @@ footer a{color:#c9a24d;text-decoration:none;display:block;margin:10px 0}
 <a class="btn" href="https://n1324160.alteg.io/">
 Записаться онлайн
 </a>
+
+<!-- Контакты под кнопками -->
+<div class="contacts" id="contacts">
+<p>Адрес: Улица Баймагамбетова, 30Б</p>
+<p>Телефон: +7 705 288 28 94</p>
+<a href="https://www.instagram.com/legion_kst/">Instagram</a>
+<a href="https://2gis.kz/kostanaj/search/legion/firm/70000001094244475/63.609097%2C53.197228?m=63.631865%2C53.215003%2F10.62">Открыть в 2GIS</a>
+</div>
 </header>
 
 <div class="section">
@@ -103,6 +143,7 @@ footer a{color:#c9a24d;text-decoration:none;display:block;margin:10px 0}
 </div>
 
 <script>
+// Карусель
 const images = [
 "work1.jpeg",
 "work2.jpeg",
@@ -112,18 +153,30 @@ const images = [
 "work6.jpeg",
 "work7.jpeg"
 ];
-
 let i = 0;
 setInterval(()=>{
 i = (i+1) % images.length;
 document.getElementById("slide").src = images[i];
 },2500);
+
+// Анимация появления контактов
+const contacts = document.getElementById('contacts');
+function checkVisibility() {
+  const rect = contacts.getBoundingClientRect();
+  if(rect.top < window.innerHeight - 50){ // когда блок почти виден
+    contacts.classList.add('visible');
+    window.removeEventListener('scroll', checkVisibility);
+  }
+}
+window.addEventListener('scroll', checkVisibility);
+window.addEventListener('load', checkVisibility);
 </script>
 
 </div>
 
 <footer>
-<h3>Контакты</h3>
+<p>Барбершоп «Legion» — четко. стильно. по-мужски.</p>
+</footer>
 
-<a href="https://www.instagram.com/legion_kst/">Instagram</a>
-<a href="https://2gis.kz/kostanaj/search/
+</body>
+</html>
