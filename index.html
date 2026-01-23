@@ -5,207 +5,194 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Барбершоп «Legion»</title>
 
-<!-- Facebook App ID -->
-<meta property="fb:app_id" content="1424566266131263">
-
-<!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://legionkst.github.io/barbershop/">
 <meta property="og:title" content="Барбершоп «Legion»">
 <meta property="og:description" content="Четко. Стильно. По-мужски. Запись онлайн и в WhatsApp">
 <meta property="og:image" content="https://legionkst.github.io/barbershop/logo.png">
-<meta property="og:image:alt" content="Барбершоп Legion">
 
-<!-- Стили -->
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,Helvetica,sans-serif;color:#fff;text-align:center;background:#000}
-
-/* Видео фон */
-.video-bg{
-position:fixed;
-top:0;left:0;
-width:100%;height:100%;
-overflow:hidden;
-z-index:-1;
-}
-.video-bg video{
-width:100%;
-height:100%;
-object-fit:cover;
-filter:brightness(40%);
-}
-
-/* Контент */
-header{padding:60px 20px}
-h1{font-size:48px;margin-bottom:15px}
-p{font-size:18px}
-
-/* Кнопки */
+body{font-family:Arial,Helvetica,sans-serif;background:#000;color:#fff;line-height:1.6}
+section{padding:80px 20px;text-align:center}
+h2{font-size:36px;margin-bottom:20px}
 .btn{
 display:inline-block;
 margin:15px;
-padding:18px 36px;
+padding:16px 36px;
 background:#c9a24d;
 color:#000;
 text-decoration:none;
 font-weight:bold;
 border-radius:8px;
 font-size:18px;
-transition: transform 0.2s;
-}
-.btn:hover{transform: scale(1.05);}
-
-/* Контакты с анимацией */
-.contacts{
-margin-top:30px;
-font-size:18px;
-opacity:0;
-transform: translateY(30px);
-transition: all 1s ease;
-}
-.contacts.visible{
-opacity:1;
-transform: translateY(0);
-}
-.contacts p{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  margin:8px 0;
 }
 
-.contacts a{
-  color:#c9a24d;
-  text-decoration:none;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-}
-
-/* Карусель */
-.carousel{
-display:flex;
-overflow:hidden;
-max-width:900px;
-margin:40px auto;
+/* HERO */
+.hero{
 position:relative;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+overflow:hidden;
 }
-.carousel img{
+.hero video{
+position:absolute;
+top:0;left:0;
+width:100%;height:100%;
+object-fit:cover;
+filter:brightness(35%);
+z-index:-1;
+}
+.hero img{max-width:380px;margin-bottom:20px}
+.hero p{font-size:20px;margin-bottom:20px}
+
+/* WHY */
+.why-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+max-width:1000px;
+margin:40px auto 0;
+text-align:left;
+}
+.why h3{color:#c9a24d;margin-bottom:10px}
+
+/* PRICES */
+.price-list{
+max-width:700px;
+margin:0 auto;
+font-size:20px;
+text-align:left;
+}
+.price-list div{
+display:flex;
+justify-content:space-between;
+padding:14px 0;
+border-bottom:1px solid #333;
+}
+.price-list b{color:#c9a24d}
+
+/* WORKS */
+.works-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+max-width:1000px;
+margin:40px auto 0;
+}
+.works-grid img{
 width:100%;
 border-radius:12px;
-transition: transform 0.3s;
 }
 
-/* Футер */
-footer{
-padding:40px 20px;
-background:#111;
-margin-top:60px;
+/* REVIEWS */
+.review-grid{
+max-width:900px;
+margin:40px auto 0;
+display:grid;
+gap:20px;
+color:#ccc;
+font-style:italic;
 }
-footer p{font-size:16px}
 
-/* Адаптив для мобильных */
-@media (max-width: 768px){
-  header{padding:80px 15px}
-  h1{font-size:32px}
-  p, .contacts{font-size:16px}
-  .btn{padding:14px 28px;font-size:16px}
-  .carousel{margin:30px auto; max-width:100%}
-}
+/* CONTACT */
+.contact p{margin:8px 0}
+.contact a{color:#c9a24d;text-decoration:none}
+
+/* CTA */
+.cta h2{margin-bottom:25px}
+
+/* FOOTER */
+footer{padding:40px 20px;background:#111;text-align:center}
 </style>
 </head>
-  
+
 <body>
 
-<!-- Видео фон -->
-<div class="video-bg">
-  <video autoplay muted loop playsinline>
-    <source src="barber.mp4" type="video/mp4">
-  </video>
+<!-- HERO -->
+<section class="hero">
+<video autoplay muted loop playsinline>
+<source src="barber.mp4" type="video/mp4">
+</video>
+
+<img src="logo.png" alt="Legion">
+<p>Твоя стрижка — наша репутация</p>
+
+<a class="btn" href="https://api.whatsapp.com/send/?phone=77052882894">Записаться в WhatsApp</a>
+<a class="btn" href="https://n1324160.alteg.io/">Записаться онлайн</a>
+</section>
+
+<!-- WHY -->
+<section class="why">
+<h2>Почему выбирают Legion</h2>
+<div class="why-grid">
+<div>
+<h3>Опытные барберы</h3>
+<p>Стрижем так, чтобы ты выглядел дороже, чем пришел.</p>
 </div>
-
-<header>
-<img src="logo.png" alt="Барбершоп Legion" style="max-width:400px; height:auto; display:block; margin:0 auto 15px;">
-<p>Твоя стрижка - наша репутация!</p>
-<p>Четко. Стильно. По-мужски.</p>
-  
-<a class="btn" href="https://api.whatsapp.com/send/?phone=77052882894&text=%D0%97%D0%B4%D1%80%D0%B0%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%D0%97%D0%B0%D0%BF%D0%B8%D1%88%D0%B8%D1%82%D0%B5+%D0%BC%D0%B5%D0%BD%D1%8F++%D0%BD%D0%B0+%D1%81%D1%82%D1%80%D0%B8%D0%B6%D0%BA%D1%83%21&type=phone_number&app_absent=0">
-Записаться в WhatsApp
-</a>
-
-<a class="btn" href="https://n1324160.alteg.io/">
-Записаться онлайн
-</a>
-
-<!-- Контакты с иконками -->
-<div class="contacts" id="contacts">
-  <p>📍<a href="https://www.google.com/maps/search/?api=1&query=Улица+Баймагамбетова,+30Б" target="_blank"> Ул. Баймагамбетова, 30Б</a></p>
-  <p>📞<a href="tel:+77052882894">+7 705 288 28 94</a></p>
- <!-- Instagram -->
-  <p>
-    <a href="https://www.instagram.com/legion_kst/" target="_blank">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#c9a24d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;">
-  <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-  <circle cx="12" cy="12" r="4"></circle>
-  <circle cx="17.5" cy="6.5" r="1"></circle>
-</svg>
-      Instagram
-    </a>
-  </p>
-
-  <!-- 2ГИС -->
-  <p>
-    <a href="https://2gis.kz/kostanaj/search/legion/firm/70000001094244475/" target="_blank">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#c9a24d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;">
-  <path d="M12 22s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"></path>
-  <circle cx="12" cy="11" r="3"></circle>
-</svg>
-      2GIS 
-    </a>
-  </p>
+<div>
+<h3>Мужская атмосфера</h3>
+<p>Без суеты. Без очередей. Только стиль и комфорт.</p>
 </div>
+<div>
+<h3>Точный результат</h3>
+<p>Показываешь фото — получаешь такой же результат.</p>
+</div>
+</div>
+</section>
 
-<div class="section">
+<!-- PRICES -->
+<section>
+<h2>Услуги и цены</h2>
+<div class="price-list">
+<div><span>Мужская стрижка</span><b>6000 ₸</b></div>
+<div><span>Стрижка + борода</span><b>9000 ₸</b></div>
+<div><span>Оформление бороды</span><b>4000 ₸</b></div>
+<div><span>Детская стрижка</span><b>5000 ₸</b></div>
+</div>
+</section>
+
+<!-- WORKS -->
+<section>
 <h2>Наши работы</h2>
-
-<div class="carousel">
-<img id="slide" src="work1.jpg">
+<div class="works-grid">
+<img src="work1.jpeg">
+<img src="work2.jpeg">
+<img src="work3.jpeg">
+<img src="work4.jpeg">
 </div>
+</section>
 
-<script>
-// Карусель
-const images = [
-"work1.jpeg",
-"work2.jpeg",
-"work3.jpeg",
-"work4.jpeg",
-"work5.jpeg",
-"work6.jpeg",
-"work7.jpeg"
-];
-let i = 0;
-setInterval(()=>{
-i = (i+1) % images.length;
-document.getElementById("slide").src = images[i];
-},2500);
+<!-- REVIEWS -->
+<section>
+<h2>Отзывы клиентов</h2>
+<div class="review-grid">
+<div>"Лучший барбершоп в Костанае. Всегда идеально." — Артём</div>
+<div>"Стригусь только тут уже 2 года." — Дамир</div>
+<div>"Атмосфера и качество на уровне." — Руслан</div>
+</div>
+</section>
 
-// Плавное появление контактов
-const contacts = document.getElementById('contacts');
-function checkVisibility() {
-  const rect = contacts.getBoundingClientRect();
-  if(rect.top < window.innerHeight - 50){
-    contacts.classList.add('visible');
-    window.removeEventListener('scroll', checkVisibility);
-  }
-}
-window.addEventListener('scroll', checkVisibility);
-window.addEventListener('load', checkVisibility);
-</script>
+<!-- CONTACT -->
+<section class="contact">
+<h2>Контакты</h2>
+<p>📍 <a href="https://www.google.com/maps/search/?api=1&query=Улица+Баймагамбетова,+30Б" target="_blank">Ул. Баймагамбетова, 30Б</a></p>
+<p>📞 <a href="tel:+77052882894">+7 705 288 28 94</a></p>
+<p><a href="https://www.instagram.com/legion_kst/" target="_blank">Instagram</a></p>
+<p><a href="https://2gis.kz/kostanaj/search/legion/firm/70000001094244475/" target="_blank">2GIS</a></p>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+<h2>Готов выглядеть лучше уже сегодня?</h2>
+<a class="btn" href="https://api.whatsapp.com/send/?phone=77052882894">Записаться в WhatsApp</a>
+</section>
 
 <footer>
-<p>Барбершоп «Legion» — четко. стильно. по-мужски.</p>
+Барбершоп «Legion» — четко. стильно. по-мужски.
 </footer>
 
 </body>
